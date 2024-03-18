@@ -26,3 +26,5 @@
 *.swn
 *.bak
 *.orig
+
+.env.local

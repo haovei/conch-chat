@@ -10,7 +10,7 @@ function withChat(fn: typeof openai.chat) {
             content: SYSTEM_PROMPTS,
         };
         const msg = SYSTEM_PROMPTS ? [system, ...messages] : messages;
-        return await fn(msg);
+        return fn(msg);
     };
 }
 

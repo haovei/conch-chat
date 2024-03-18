@@ -15,6 +15,12 @@ async function chat(messages: ChatCompletionMessageParam[]) {
         stream: true,
     });
 
+    // console.log('stream', stream);
+
+    // for await (const chunk of stream) {
+    //     process.stdout.write(chunk.choices[0]?.delta?.content ?? '');
+    // }
+
     return stream;
 }
 

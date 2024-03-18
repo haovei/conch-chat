@@ -24,8 +24,12 @@
                 while (true) {
                     const { value, done } = await reader.read();
                     if (done) break;
-                    chatDiv.innerHTML += value + '<br>';
-                    console.log('Received', value);
+                    const _value = value
+                        ?.replaceAll('event: message', '')
+                        .replaceAll('data: ', '')
+                        .replaceAll('\n', '');
+                    console.log('_value', _value);
+                    chatDiv.innerHTML += _value;
                 }
             })();
         </script>
