@@ -1,0 +1,23 @@
+{
+    "name": "small-conch",
+    "version": "0.0.1",
+    "module": "index.ts",
+    "type": "module",
+    "scripts": {
+        "dev": "bun --watch run src/index.ts",
+        "build": "bun ./scripts/build.ts",
+        "start": "bun ./dist/index.js",
+        "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+        "test": "bun test"
+    },
+    "devDependencies": {
+        "@types/bun": "latest"
+    },
+    "peerDependencies": {
+        "typescript": "^5.0.0"
+    },
+    "dependencies": {
+        "hono": "^4.1.1",
+        "openai": "^4.29.1"
+    }
+}
