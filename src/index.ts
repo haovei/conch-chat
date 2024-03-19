@@ -15,6 +15,7 @@ app.use('/*', etag({ weak: true }), serveStatic({ root: './public/' }));
 
 app.post('/api/chat/completions', async (c) => {
     const { messages } = await c.req.json();
+    let id = 0;
 
     try {
         const chatStream = await platform.chat(messages);
@@ -25,8 +26,14 @@ app.post('/api/chat/completions', async (c) => {
                 await stream.writeSSE({
                     data: msg,
                     event: 'message',
+                    id: (id++).toString(),
                 });
             }
+            await stream.writeSSE({
+                data: '',
+                event: 'DONE',
+                id: (id++).toString(),
+            });
         });
     } catch (e: any) {
         console.error(e);
