@@ -1,3 +1,4 @@
+// OpenAI API
 import OpenAI from 'openai';
 import type { ChatCompletionMessageParam } from 'openai/resources/chat/completions.mjs';
 import { OPENAI_API_KEY, OPENAI_API_MODEL, OPENAI_BASE_URL, OPENAI_ORG_ID } from '@/constant';
@@ -14,12 +15,6 @@ async function chat(messages: ChatCompletionMessageParam[]) {
         model: OPENAI_API_MODEL,
         stream: true,
     });
-
-    // console.log('stream', stream);
-
-    // for await (const chunk of stream) {
-    //     process.stdout.write(chunk.choices[0]?.delta?.content ?? '');
-    // }
 
     return stream;
 }
