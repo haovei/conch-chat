@@ -27,6 +27,7 @@
         "typescript": "^5.0.0"
     },
     "dependencies": {
+        "@baiducloud/qianfan": "^0.0.6",
         "hono": "^4.1.1",
         "openai": "^4.29.1"
     }

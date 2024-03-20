@@ -3,5 +3,5 @@ await Bun.build({
     entrypoints: ['./src/index.ts'],
     outdir: './dist',
     target: 'bun',
-    external: ['hono'],
+    external: ['hono', 'openai', '@baiducloud/qianfan'],
 });

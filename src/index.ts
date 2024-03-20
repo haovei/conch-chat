@@ -18,11 +18,11 @@ app.post('/api/chat/completions', async (c) => {
     let id = 0;
 
     try {
-        const chatStream = await platform.chat(messages);
+        const messageStream = await platform.chat(messages);
 
         return streamSSE(c, async (stream) => {
-            for await (const chunk of chatStream) {
-                const msg = chunk.choices[0]?.delta?.content ?? '';
+            for await (const message of messageStream) {
+                const msg = message?.content ?? '';
                 await stream.writeSSE({
                     data: msg,
                     event: 'message',

@@ -1,21 +1,26 @@
-import { SYSTEM_PROMPTS } from '@/constant';
+import { CURRENT_API, SYSTEM_PROMPTS } from '@/constant';
 import type { ChatMessage } from '@/type';
 import openai from './openai';
+import qianfan from './qianfan';
 
 function withChat(fn: typeof openai.chat) {
     return async (messages: ChatMessage[]) => {
-        const system: ChatMessage = {
-            role: 'system',
-            content: SYSTEM_PROMPTS,
-        };
-        const msg = SYSTEM_PROMPTS ? [system, ...messages] : messages;
-        console.log('Chat messages:', msg);
-        return fn(msg);
+        console.log(`[${CURRENT_API}]`, 'Chat messages:', messages);
+        return fn(messages);
     };
 }
 
-const chat = withChat(openai.chat);
+function generatePlatform(platform: string) {
+    switch (platform) {
+        case 'OPENAI':
+            return openai;
+        case 'QIANFAN':
+            return qianfan;
+        default:
+            return openai;
+    }
+}
 
 export default {
-    chat,
+    chat: withChat(generatePlatform(CURRENT_API).chat),
 };
