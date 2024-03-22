@@ -5,6 +5,7 @@
     "type": "module",
     "scripts": {
         "client": "bunx --bun vite -c client/vite.config.ts",
+        "client:build": "bunx --bun vite -c client/vite.config.ts build",
         "dev": "bun --watch run src/index.ts",
         "build": "bun ./scripts/build.ts",
         "start": "bun ./dist/index.js",

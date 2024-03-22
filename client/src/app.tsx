@@ -21,7 +21,7 @@ export default function App() {
             setMarkdown('');
         };
 
-        fetchEventSource('/api/chat/completions', {
+        fetchEventSource('api/chat/completions', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -85,14 +85,18 @@ export default function App() {
                         key={index}
                         className={`flex m-4 ${msg.role === 'user' ? 'flex-row-reverse' : ''}`}
                     >
-                        <div className="p-4 rounded-lg bg-gray-100">
+                        <div
+                            className={`p-4 rounded-lg bg-gray-100 ${
+                                msg.role === 'user' ? "rounded-tr-none ml-10" : "rounded-tl-none mr-10"
+                            }`}
+                        >
                             <Markdown>{msg.content}</Markdown>
                         </div>
                     </div>
                 ))}
                 {isReceiving && markdown && (
                     <div className="flex m-4">
-                        <div className="p-4 rounded-lg bg-gray-100">
+                        <div className="p-4 rounded-lg rounded-tl-none mr-10 bg-gray-100">
                             <Markdown>{markdown}</Markdown>
                         </div>
                     </div>

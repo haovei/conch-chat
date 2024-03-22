@@ -12,6 +12,7 @@
 
 # 目录用于输出
 /dist
+/client/dist
 
 # dotenv 环境变量文件
 .env

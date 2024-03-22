@@ -19,4 +19,7 @@ export default defineConfig({
         },
     },
     base: './',
+    build: {
+        outDir: '../public',
+    }
 });
