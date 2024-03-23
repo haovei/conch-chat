@@ -96,7 +96,7 @@ export default function App() {
                         </div>
                     </div>
                 ))}
-                {isReceiving && markdown && (
+                {isReceiving && (
                     <div className="flex m-4">
                         <div className="p-4 rounded-lg rounded-tl-none mr-10 bg-gray-100">
                             <Markdown>{markdown}</Markdown>
