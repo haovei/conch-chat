@@ -1,5 +1,10 @@
 # Conch AI Chat
 
+![GitHub license](https://img.shields.io/github/license/haovei/conch-chat.svg)
+![GitHub issues](https://img.shields.io/github/issues/haovei/conch-chat.svg)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/haovei/conch-chat/docker.yml)
+![Docker Pulls](https://img.shields.io/docker/pulls/qutea/conch-chat)
+
 海螺 AI 聊天机器人。通过配置人设，实现不同角色的聊天。
 
 ## 功能
