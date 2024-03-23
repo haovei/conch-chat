@@ -72,7 +72,7 @@ export default function App() {
             return;
         }
         setInputText('');
-        setMarkdown('...');
+        setMarkdown('');
         setMessageList([...messageList, { role: 'user', content: inputText }]);
         setIsReceiving(true);
     }, [inputText, messageList]);
@@ -87,7 +87,9 @@ export default function App() {
                     >
                         <div
                             className={`p-4 rounded-lg bg-gray-100 ${
-                                msg.role === 'user' ? "rounded-tr-none ml-10" : "rounded-tl-none mr-10"
+                                msg.role === 'user'
+                                    ? 'rounded-tr-none ml-10'
+                                    : 'rounded-tl-none mr-10'
                             }`}
                         >
                             <Markdown>{msg.content}</Markdown>
@@ -98,6 +100,7 @@ export default function App() {
                     <div className="flex m-4">
                         <div className="p-4 rounded-lg rounded-tl-none mr-10 bg-gray-100">
                             <Markdown>{markdown}</Markdown>
+                            <div className="text-gray-400 text-sm">Thinking...</div>
                         </div>
                     </div>
                 )}

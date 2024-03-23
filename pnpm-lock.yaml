@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@baiducloud/qianfan':
-    specifier: 0.0.4
-    version: 0.0.4
+    specifier: ^0.0.7
+    version: 0.0.7
   hono:
     specifier: ^4.1.1
     version: 4.1.1
@@ -287,12 +287,13 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@baiducloud/qianfan@0.0.4:
-    resolution: {integrity: sha512-tYwt5XIrWoaEWSk39KgBhsnp1I1eTaXUuVWuttKmaPjkEH81ru11lTTGlhEikYHor17AJpnX5d0SAa5gLmQwqw==}
+  /@baiducloud/qianfan@0.0.7:
+    resolution: {integrity: sha512-jayOzwuQ2tN8Av/RJvdf9yG4udvCyvoM3+n548HEsI1gf3aglb25TksjvWLgZ5M+1VPoSZCbJuaGAS1AZaTaGQ==}
     dependencies:
+      await-mutex: 1.0.2
+      bottleneck: 2.19.5
       debug: 3.2.7
       dotenv: 16.4.5
-      q: 1.5.1
       rollup: 4.13.0
       tslib: 2.6.2
       typescript: 5.4.2
@@ -894,6 +895,18 @@ packages:
       postcss-value-parser: 4.2.0
     dev: true
 
+  /await-mutex@1.0.2:
+    resolution: {integrity: sha512-ZuUEsG60oA2EstXMWT1VnXksdoia+C8hhwl0bvKRKstb9v25pf1CmYj6FwOkmSKjY2gLRSt/yJ5hqGlSzWxucQ==}
+    dependencies:
+      babel-runtime: 6.3.19
+    dev: false
+
+  /babel-runtime@6.3.19:
+    resolution: {integrity: sha512-tU4y05h5o3iFThxYfmkDwXzCgeit4TXGK0wDBPmq8DqXTFDm9HRBACxxGM9neF7Zh3lVnjfIzqZ3wtcA83uMFg==}
+    dependencies:
+      core-js: 1.2.7
+    dev: false
+
   /bail@2.0.2:
     resolution: {integrity: sha512-0xO6mYd7JB2YesxDKplafRpsiOzPt9V02ddPCLbY1xYGPOX24NTyN50qnUxgCPcSoYMhKpAuBTjQoRZCAkUDRw==}
     dev: true
@@ -910,6 +923,10 @@ packages:
     resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
     engines: {node: '>=8'}
     dev: true
+
+  /bottleneck@2.19.5:
+    resolution: {integrity: sha512-VHiNCbI1lKdl44tGrhNfU3lup0Tj/ZBMJB5/2ZbNXRCPuRCO7ed2mgcK4r17y+KB2EfuYuRaVlwNbAeaWGSpbw==}
+    dev: false
 
   /brace-expansion@2.0.1:
     resolution: {integrity: sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==}
@@ -1039,6 +1056,11 @@ packages:
   /convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
     dev: true
+
+  /core-js@1.2.7:
+    resolution: {integrity: sha512-ZiPp9pZlgxpWRu0M+YWbm6+aQ84XEfH1JRXvfOc/fILWI0VKhLC2LX13X1NYq4fULzLMq7Hfh43CSo2/aIaUPA==}
+    deprecated: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
+    dev: false
 
   /cross-spawn@7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
@@ -2028,11 +2050,6 @@ packages:
   /property-information@6.4.1:
     resolution: {integrity: sha512-OHYtXfu5aI2sS2LWFSN5rgJjrQ4pCy8i1jubJLe2QvMF8JJ++HXTUIVWFLfXJoaOfvYYjk2SN8J2wFUWIGXT4w==}
     dev: true
-
-  /q@1.5.1:
-    resolution: {integrity: sha512-kV/CThkXo6xyFEZUugw/+pIOywXcDbFYgSct5cT3gqlbkBE1SJdwy6UQoZvodiWF/ckQLZyDE/Bu1M6gVu5lVw==}
-    engines: {node: '>=0.6.0', teleport: '>=0.2.0'}
-    dev: false
 
   /queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
