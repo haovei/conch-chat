@@ -6,6 +6,7 @@ WORKDIR /app
 FROM base AS builder
 COPY . .
 RUN bun install
+RUN bun run client:build
 RUN bun run build
 
 FROM base AS runner

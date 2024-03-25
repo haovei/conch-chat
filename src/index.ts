@@ -29,9 +29,10 @@ app.post('/api/chat/completions', async (c) => {
                     id: (id++).toString(),
                 });
             }
+            console.log('Message End');
             await stream.writeSSE({
-                data: '',
-                event: 'DONE',
+                data: '[DONE]',
+                event: 'message',
                 id: (id++).toString(),
             });
         });

@@ -34,7 +34,7 @@ export default function App() {
             },
             async onmessage(msg) {
                 console.log('message', msg);
-                if (msg.event === 'DONE') {
+                if (msg.data === '[DONE]') {
                     renderText();
                     console.log('Done');
                     messageDone();
