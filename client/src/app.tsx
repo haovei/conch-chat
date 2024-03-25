@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import Markdown from 'react-markdown';
-import { fetchEventSource } from '@fortaine/fetch-event-source';
+import { fetchEventSource } from '@microsoft/fetch-event-source';
 
 export default function App() {
     const [isReceiving, setIsReceiving] = useState(false);
@@ -8,8 +8,9 @@ export default function App() {
     const [markdown, setMarkdown] = useState('');
     const [inputText, setInputText] = useState('');
 
-    const sendMessage = useCallback(() => {
+    const sendMessage = useCallback(async () => {
         let remainText = '';
+        const controller = new AbortController();
 
         const renderText = () => {
             setMarkdown(remainText);
@@ -19,9 +20,11 @@ export default function App() {
             setMessageList((list) => [...list, { role: 'assistant', content: remainText }]);
             setIsReceiving(false);
             setMarkdown('');
+            controller.abort();
         };
 
         fetchEventSource('api/chat/completions', {
+            signal: controller.signal,
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

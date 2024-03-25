@@ -23,18 +23,20 @@ app.post('/api/chat/completions', async (c) => {
         return streamSSE(c, async (stream) => {
             for await (const message of messageStream) {
                 const msg = message?.content ?? '';
-                await stream.writeSSE({
-                    data: msg,
-                    event: 'message',
-                    id: (id++).toString(),
-                });
+                if (msg) {
+                    await stream.writeSSE({
+                        data: msg,
+                        event: 'message',
+                        id: String(id++),
+                    });
+                }
             }
-            console.log('Message End');
             await stream.writeSSE({
                 data: '[DONE]',
                 event: 'message',
-                id: (id++).toString(),
+                id: String(id++),
             });
+            stream.close();
         });
     } catch (e: any) {
         console.error(e);
