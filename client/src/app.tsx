@@ -10,6 +10,7 @@ export default function App() {
 
     const sendMessage = useCallback(async () => {
         let remainText = '';
+        let isFinished = false;
         const controller = new AbortController();
 
         const renderText = () => {
@@ -17,6 +18,10 @@ export default function App() {
         };
 
         const messageDone = () => {
+            if (isFinished) {
+                return;
+            }
+            isFinished = true;
             setMessageList((list) => [...list, { role: 'assistant', content: remainText }]);
             setIsReceiving(false);
             setMarkdown('');
