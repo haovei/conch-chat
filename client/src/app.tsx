@@ -71,7 +71,7 @@ export default function App() {
     }, [isReceiving, sendMessage]);
 
     const handleSend = useCallback(() => {
-        if (!inputText) {
+        if (!inputText || isReceiving) {
             return;
         }
         setInputText('');
@@ -128,7 +128,9 @@ export default function App() {
                         type="button"
                         onClick={handleSend}
                         disabled={isReceiving}
-                        className="h-full px-4 bg-blue-500 text-white"
+                        className={`h-full px-4 bg-blue-500 text-white ${
+                            isReceiving ? 'cursor-not-allowed bg-gray-400' : ''
+                        }`}
                     >
                         发送
                     </button>
