@@ -30,7 +30,7 @@
         "typescript": "^5.0.0"
     },
     "dependencies": {
-        "@baiducloud/qianfan": "0.0.4",
+        "@baiducloud/qianfan": "0.0.8",
         "hono": "^4.1.3",
         "openai": "^4.29.2"
     }
