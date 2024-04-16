@@ -1,7 +1,8 @@
-import { CURRENT_API, SYSTEM_PROMPTS } from '@/constant';
+import { CURRENT_API } from '@/constant';
 import type { ChatMessage } from '@/type';
 import openai from './openai';
 import qianfan from './qianfan';
+import azure from './azure';
 
 function withChat(fn: typeof openai.chat) {
     return async (messages: ChatMessage[]) => {
@@ -16,6 +17,8 @@ function generatePlatform(platform: string) {
             return openai;
         case 'QIANFAN':
             return qianfan;
+        case 'AZURE':
+            return azure;
         default:
             return openai;
     }

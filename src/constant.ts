@@ -15,3 +15,8 @@ export const OPENAI_API_MODEL = process.env.OPENAI_API_MODEL ?? 'gpt-3.5-turbo-0
 export const QIANFAN_ACCESS_KEY = process.env.QIANFAN_ACCESS_KEY ?? '';
 export const QIANFAN_SECRET_KEY = process.env.QIANFAN_SECRET_KEY ?? '';
 export const QIANFAN_API_MODEL = process.env.QIANFAN_API_MODEL ?? 'ERNIE-Bot-turbo';
+
+// Azure Key
+export const AZURE_API_KEY = process.env.AZURE_API_KEY ?? '';
+export const AZURE_API_MODEL = process.env.AZURE_API_MODEL ?? 'gpt-35-turbo';
+export const AZURE_BASE_URL = process.env.AZURE_BASE_URL ?? 'https://api.openai.com/';
