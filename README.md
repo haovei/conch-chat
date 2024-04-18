@@ -15,6 +15,8 @@
 
 -   [x] OpenAI
 -   [x] 文心一言
+-   [x] Azure OpenAI
+-   [x] Ollama
 
 ## 使用
 
