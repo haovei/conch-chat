@@ -3,6 +3,7 @@ import type { ChatMessage } from '@/type';
 import openai from './openai';
 import qianfan from './qianfan';
 import azure from './azure';
+import ollama from './ollama';
 
 function withChat(fn: typeof openai.chat) {
     return async (messages: ChatMessage[]) => {
@@ -19,6 +20,8 @@ function generatePlatform(platform: string) {
             return qianfan;
         case 'AZURE':
             return azure;
+        case 'OLLAMA':
+            return ollama;
         default:
             return openai;
     }

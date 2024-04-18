@@ -20,3 +20,6 @@ export const QIANFAN_API_MODEL = process.env.QIANFAN_API_MODEL ?? 'ERNIE-Bot-tur
 export const AZURE_API_KEY = process.env.AZURE_API_KEY ?? '';
 export const AZURE_API_MODEL = process.env.AZURE_API_MODEL ?? 'gpt-35-turbo';
 export const AZURE_BASE_URL = process.env.AZURE_BASE_URL ?? 'https://api.openai.com/';
+
+// Ollama Key
+export const OLLAMA_API_MODEL = process.env.OLLAMA_API_MODEL ?? 'gemma:7b';
