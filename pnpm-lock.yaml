@@ -12,11 +12,11 @@ importers:
         specifier: 1.0.0-beta.12
         version: 1.0.0-beta.12
       '@baiducloud/qianfan':
-        specifier: 0.0.8
-        version: 0.0.8
+        specifier: 0.0.10
+        version: 0.0.10
       hono:
-        specifier: ^4.2.1
-        version: 4.2.1
+        specifier: ^4.3.2
+        version: 4.3.2
       ollama:
         specifier: ^0.5.0
         version: 0.5.0
@@ -213,8 +213,8 @@ packages:
     resolution: {integrity: sha512-+j7a5c253RfKh8iABBhywc8NSfP5LURe7Uh4qpsh6jc+aLJguvmIUBdjSdEMQv2bENrCR5MfRdjGo7vzS/ob7w==}
     engines: {node: '>=6.9.0'}
 
-  '@baiducloud/qianfan@0.0.8':
-    resolution: {integrity: sha512-xSkbLsnmLkM5Agk98FVFwcT3j1ajo5O+pT613WivjjL5ciE+VBFG7XJABAP7gWEk3Rp2vH6g32vygawfJp3a+Q==}
+  '@baiducloud/qianfan@0.0.10':
+    resolution: {integrity: sha512-K8w6LFHMm26weTvl5hQZul0tvUFHtdpihnSqTSGGoiqRVGMbzn/wtA8MYgcHWxYXVFg4D1MI0bmGB6N6VBIVWw==}
 
   '@esbuild/aix-ppc64@0.20.2':
     resolution: {integrity: sha512-D+EBOJHXdNZcLJRBkhENNG8Wji2kgc9AZ9KiPr1JuZjsNtyHzrsfLRrY0tk2H2aoFu6RANO1y1iPPUCDYWkb5g==}
@@ -832,8 +832,8 @@ packages:
   hast-util-whitespace@3.0.0:
     resolution: {integrity: sha512-88JUN06ipLwsnv+dVn+OIYOvAuvBMy/Qoi6O7mQHxdPXpjy+Cd6xRkWwux7DKO+4sYILtLBRIKgsdpS2gQc7qw==}
 
-  hono@4.2.1:
-    resolution: {integrity: sha512-yDv/6esHiDgq5fvsALTNyNiRxktOplO6LfSMgIkGE+E5vF8axsUfcyfzzlbLYM9ZQDMuws/ZLGUGWwYnAwCcNw==}
+  hono@4.3.2:
+    resolution: {integrity: sha512-wiZcF5N06tc232U11DnqW6hP8DNoypjsrxslKXfvOqOAkTdh7K1HLZJH/92Mf+urxUTGi96f1w4xx/1Qozoqiw==}
     engines: {node: '>=16.0.0'}
 
   html-url-attributes@3.0.0:
@@ -1224,6 +1224,11 @@ packages:
   reusify@1.0.4:
     resolution: {integrity: sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
+
+  rollup@3.29.4:
+    resolution: {integrity: sha512-oWzmBZwvYrU0iJHtDmhsm662rC15FRXmcjCk1xD771dFDx5jJ02ufAQQTn0etB2emNk4J9EZg/yWKpsn9BWGRw==}
+    engines: {node: '>=14.18.0', npm: '>=8.0.0'}
+    hasBin: true
 
   rollup@4.13.0:
     resolution: {integrity: sha512-3YegKemjoQnYKmsBlOHfMLVPPA5xLkQ8MHLLSw/fBrFaVkEayL51DilPpNNLq1exr98F2B1TzrV0FUlN3gWRPg==}
@@ -1660,18 +1665,21 @@ snapshots:
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
 
-  '@baiducloud/qianfan@0.0.8':
+  '@baiducloud/qianfan@0.0.10':
     dependencies:
+      '@types/node-fetch': 2.6.11
       async-mutex: 0.5.0
       bottleneck: 2.19.5
       debug: 3.2.7
       dotenv: 16.4.5
-      rollup: 4.13.0
+      node-fetch: 2.7.0
+      rollup: 3.29.4
       tslib: 2.6.2
       typescript: 5.4.2
       underscore: 1.13.6
       urlencode: 1.1.0
     transitivePeerDependencies:
+      - encoding
       - supports-color
 
   '@esbuild/aix-ppc64@0.20.2':
@@ -2224,7 +2232,7 @@ snapshots:
     dependencies:
       '@types/hast': 3.0.4
 
-  hono@4.2.1: {}
+  hono@4.3.2: {}
 
   html-url-attributes@3.0.0: {}
 
@@ -2733,6 +2741,10 @@ snapshots:
       supports-preserve-symlinks-flag: 1.0.0
 
   reusify@1.0.4: {}
+
+  rollup@3.29.4:
+    optionalDependencies:
+      fsevents: 2.3.3
 
   rollup@4.13.0:
     dependencies:
